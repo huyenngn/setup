@@ -36,6 +36,8 @@ sudo apt-get install winetricks
 
 https://superuser.com/questions/1293042/bidirectional-clipboard-not-working-in-virtualbox
 
+https://askubuntu.com/questions/367396/what-does-the-startupwmclass-field-of-a-desktop-file-represent
+
 https://de.mathworks.com/matlabcentral/answers/1459474-sudo-install-not-opening-installer-matlab-2021b
 Then run sudo apt install --reinstall nvidia-driver-470 and post the output here.
 Then sudo prime-select nvidia. If it says already set, switch back to intel and then to nvidia again.
