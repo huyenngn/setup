@@ -27,6 +27,7 @@ sudo apt install indicator-multiload
 piper
 
 https://repo.herecura.eu/herecura/x86_64/
+
 cp libffmpeg.so /usr/lib/x86_64-linux-gnu/opera
 
 sudo apt-get install nautilus-admin
@@ -54,3 +55,5 @@ sudo apt-get install matlab-support
 sudo apt install --reinstall nvidia-driver-470 
 
 sudo prime-select nvidia
+
+gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
