@@ -19,7 +19,7 @@ chmod +x ./install.sh ./uninstall.sh
 ./install.sh
 ```
 
-``
+```
 sudo apt install menulibre
 sudo apt install indicator-multiload
 sudo apt-get install nautilus-admin
@@ -27,7 +27,7 @@ sudo apt-get install libxdo-dev
 sudo apt-get install winetricks
 ```
 
-- https://repo.herecura.eu/herecura/x86_64/
+https://repo.herecura.eu/herecura/x86_64/
 
 ```
 cp libffmpeg.so /usr/lib/x86_64-linux-gnu/opera
