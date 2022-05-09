@@ -25,6 +25,7 @@ sudo apt install menulibre
 sudo apt install indicator-multiload
 sudo apt-get install nautilus-admin
 sudo apt-get install libxdo-dev
+sudo apt-get install libgtk-3-dev
 sudo apt-get install winetricks
 ```
 
