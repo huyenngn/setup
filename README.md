@@ -7,10 +7,11 @@ sudo apt-get install --no-install-recommends build-essential ninja-build wget fi
 ```
 sudo apt install gnome-tweaks
 sudo apt install gnome-shell-extensions
-sudo apt-get install git autokey-gtk
+sudo apt install gnome-shell-extension-manager
 ```
 
 ```
+sudo apt-get install git autokey-gtk
 cd ~/Downloads
 rm -rf ./gnome-macorm -rf ./gnome-macos-remap
 git clone https://github.com/petrstepanov/gnome-macos-remap
