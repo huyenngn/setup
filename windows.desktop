@@ -2,6 +2,6 @@
 Version=1.0
 Type=Application
 Name=Switch to Windows
-Exec=/home/sofia/.local/share/applications/setup-main/windows.sh
-Icon=/home/sofia/.local/share/applications/setup-main/switch.png
+Exec=/home/sofia/.local/share/applications/windows/windows.sh
+Icon=/home/sofia/.local/share/applications/windows/icon.png
 Terminal=false
