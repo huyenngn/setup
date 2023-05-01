@@ -9,7 +9,7 @@ sudo apt update
 
 # install essentials
 sudo apt install -y --no-install-recommends build-essential ninja-build wget \
-                                            file python3 pkg-config libgmp-dev \
+                                            file python-is-python3 pkg-config libgmp-dev \
                                             libmpfr-dev libmpc-dev libexpat-dev \
                                             libfdt-dev libglib2.0-dev libpixman-1-dev
 # gnome extensions
@@ -31,11 +31,11 @@ sudo apt install pipewire-audio-client-libraries
 sudo apt install gstreamer1.0-pipewire libspa-0.2-bluetooth libspa-0.2-jack
 
 # set pipewire as default audio daemon
-systemctl --user stop pulseaudio.service pulseaudio.socket
-systemctl --user disable pulseaudio.service pulseaudio.socket
-systemctl --user mask pulseaudio.service pulseaudio.socket
-systemctl --user enable pipewire.socket pipewire-pulse.socket
-systemctl --user start pipewire.socket pipewire-pulse.socket
+sudo systemctl --user stop pulseaudio.service pulseaudio.socket
+sudo systemctl --user disable pulseaudio.service pulseaudio.socket
+sudo systemctl --user mask pulseaudio.service pulseaudio.socket
+sudo systemctl --user enable pipewire.socket pipewire-pulse.socket
+sudo systemctl --user start pipewire.socket pipewire-pulse.socket
 
 # fix pipewire
 sudo touch /usr/share/pipewire/media-session.d/with-pulseaudio 
@@ -54,13 +54,14 @@ gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
 sudo snap remove --purge firefox
 
 # switch to windows shortcut
-mkdir $applications/windows
-mv windows.desktop $applications
-mv windows.sh $applications/windows
+mkdir "$applications"/windows
+mv windows.desktop "$applications"
+mv windows.sh "$applications"/windows
+mv icon.png "$applications"/windows
 
 # remap mac keyboard
 sudo apt install git autokey-gtk
-rm -rf $downloads"/gnome-macorm" -rf $downloads/gnome-macos-remap
-git clone https://github.com/petrstepanov/gnome-macos-remap $downloads
-chmod +x $downloads"/gnome-macos-remap/install.sh" $downloads"/gnome-macos-remap/uninstall.sh"
-sh $downloads"/gnome-macos-remap/install.sh"
+rm -rf "$downloads"/gnome-macorm -rf "$downloads"/gnome-macos-remap
+git clone https://github.com/petrstepanov/gnome-macos-remap "$downloads"
+chmod +x "$downloads"/gnome-macos-remap/install.sh "$downloads"/gnome-macos-remap/uninstall.sh
+sh "$downloads"/gnome-macos-remap/install.sh
