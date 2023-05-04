@@ -10,7 +10,7 @@ sudo apt update
 # install essentials
 sudo apt install -y --no-install-recommends build-essential ninja-build wget \
                                             file python-is-python3 pkg-config libgmp-dev \
-                                            libmpfr-dev libmpc-dev libexpat-dev \
+                                            libmpfr-dev libmpc-dev libexpat-dev dbus-x11 \
                                             libfdt-dev libglib2.0-dev libpixman-1-dev
 # gnome extensions
 sudo apt install -y gnome-tweaks
