@@ -1,7 +1,6 @@
 #!/bin/bash
 
-downloads=/home/sofia/Downloads
-applications=/home/sofia/.local/share/applications
+applications=~/.local/share/applications
 
 # add repos
 sudo add-apt-repository ppa:pipewire-debian/pipewire-upstream
@@ -61,7 +60,8 @@ mv icon.png "$applications"/windows
 
 # remap mac keyboard
 sudo apt install git autokey-gtk
-rm -rf "$downloads"/gnome-macorm -rf "$downloads"/gnome-macos-remap
-git clone https://github.com/petrstepanov/gnome-macos-remap "$downloads"
-chmod +x "$downloads"/gnome-macos-remap/install.sh "$downloads"/gnome-macos-remap/uninstall.sh
-sh "$downloads"/gnome-macos-remap/install.sh
+rm -rf ~/Downloads/gnome-macos-remap
+git clone https://github.com/petrstepanov/gnome-macos-remap ~/Downloads
+chmod +x ~/Downloads/install.sh ~/Downloads/uninstall.sh
+sh ~/Downloads/install.sh
+
