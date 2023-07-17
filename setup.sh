@@ -1,13 +1,10 @@
 #!/bin/bash
 
-applications=~/.local/share/applications
-
 # add repos
-sudo add-apt-repository ppa:pipewire-debian/pipewire-upstream
 sudo apt update
 
 # install essentials
-sudo apt install -y --no-install-recommends build-essential ninja-build wget \
+sudo apt install -y --no-install-recommends build-essential ninja-build wget curl \
                                             file python-is-python3 pkg-config libgmp-dev \
                                             libmpfr-dev libmpc-dev libexpat-dev dbus-x11 \
                                             libfdt-dev libglib2.0-dev libpixman-1-dev
@@ -24,23 +21,6 @@ sudo apt-get install -y libgtk-3-dev
 sudo apt install --reinstall nvidia-driver-470 
 sudo prime-select nvidia
 
-# install pipewire
-sudo apt install pipewire pipewire-pulse
-sudo apt install pipewire-audio-client-libraries
-sudo apt install gstreamer1.0-pipewire libspa-0.2-bluetooth libspa-0.2-jack
-
-# set pipewire as default audio daemon
-sudo systemctl --user stop pulseaudio.service pulseaudio.socket
-sudo systemctl --user disable pulseaudio.service pulseaudio.socket
-sudo systemctl --user mask pulseaudio.service pulseaudio.socket
-sudo systemctl --user enable pipewire.socket pipewire-pulse.socket
-sudo systemctl --user start pipewire.socket pipewire-pulse.socket
-
-# fix pipewire
-sudo touch /usr/share/pipewire/media-session.d/with-pulseaudio 
-systemctl restart --user pipewire pipewire-media-session pipewire-pulse
-sudo cp -r /usr/share/pipewire /etc/
-
 sudo apt install -y indicator-multiload nautilus-admin
 
 # fix wrong time
@@ -53,15 +33,15 @@ gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
 sudo snap remove --purge firefox
 
 # switch to windows shortcut
-mkdir "$applications"/windows
-mv windows.desktop "$applications"
-mv windows.sh "$applications"/windows
-mv icon.png "$applications"/windows
+mkdir /opt/switch_to_windows
+mkdir /usr/share/icons/switch_to_windows
+mv windows.desktop /usr/share/applications
+mv windows.sh /opt/switch_to_windows
+mv icon.png /usr/share/icons/switch_to_windows
 
 # remap mac keyboard
-sudo apt install git autokey-gtk
-rm -rf ~/Downloads/gnome-macos-remap
-git clone https://github.com/petrstepanov/gnome-macos-remap ~/Downloads
-chmod +x ~/Downloads/install.sh ~/Downloads/uninstall.sh
-sh ~/Downloads/install.sh
+sudo apt install autokey-gtk
+git clone https://github.com/petrstepanov/gnome-macos-remap
+chmod +x "./gnome-macos-remap/install.sh "./gnome-macos-remap/uninstall.sh"
+sh "./gnome-macos-remap/install.sh"
 

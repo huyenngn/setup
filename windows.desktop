@@ -2,6 +2,6 @@
 Version=1.0
 Type=Application
 Name=Switch to Windows
-Exec=~/.local/share/applications/windows/windows.sh
-Icon=~/.local/share/applications/windows/icon.png
+Exec=/opt/switch_to_windows/windows.sh
+Icon=/usr/share/icons/switch_to_windows/icon.png
 Terminal=false
