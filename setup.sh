@@ -38,9 +38,3 @@ mkdir /usr/share/icons/switch_to_windows
 mv windows.desktop /usr/share/applications
 mv windows.sh /opt/switch_to_windows
 mv icon.png /usr/share/icons/switch_to_windows
-
-# remap mac keyboard
-sudo apt install autokey-gtk
-git clone https://github.com/petrstepanov/gnome-macos-remap
-chmod +x "./gnome-macos-remap/install.sh "./gnome-macos-remap/uninstall.sh"
-sh "./gnome-macos-remap/install.sh"
