@@ -16,6 +16,7 @@ sh setup.sh
   - [Zoom](https://zoom.us/download?os=linux)
   - [RealVNC](https://www.realvnc.com/en/connect/download/viewer/)
   - [Gesture](https://github.com/harshadgavali/gnome-x11-gesture-daemon)
+  - [Mac Keyboard](https://github.com/petrstepanov/gnome-macos-remap)
 
 4. Install these extensions:
   - Frippery Move Clock
