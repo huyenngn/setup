@@ -2,26 +2,18 @@
 
 # add repos
 sudo apt update
+sudo apt -y upgrade
 
 # install essentials
-sudo apt install -y --no-install-recommends build-essential ninja-build wget curl \
+sudo apt install -y --no-install-recommends build-essential ninja-build wget curl git \
                                             file python-is-python3 pkg-config libgmp-dev \
                                             libmpfr-dev libmpc-dev libexpat-dev dbus-x11 \
                                             libfdt-dev libglib2.0-dev libpixman-1-dev
 # gnome extensions
-sudo apt install -y gnome-tweaks
-sudo apt install -y gnome-shell-extensions
-sudo apt install -y gnome-shell-extension-manager
+sudo apt install -y gnome-tweaks gnome-shell-extensions gnome-shell-extension-manager
 
 # for linux-typer
-sudo apt-get install -y libxdo-dev
-sudo apt-get install -y libgtk-3-dev
-
-# reinstall nvidia drivers
-sudo apt install --reinstall nvidia-driver-470 
-sudo prime-select nvidia
-
-sudo apt install -y indicator-multiload nautilus-admin
+sudo apt-get install -y libxdo-dev libgtk-3-dev
 
 # fix wrong time
 timedatectl set-local-rtc 1 --adjust-system-clock
@@ -31,6 +23,14 @@ gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
 
 # uninstall firefox
 sudo snap remove --purge firefox
+
+# install apps
+sudo apt install -y indicator-multiload nautilus-admin rpi-imager
+sudo snap install vlc spotify
+
+# install nodejs
+curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash - &&\
+sudo apt-get install -y nodejs
 
 # switch to windows shortcut
 mkdir /opt/switch_to_windows
@@ -44,4 +44,3 @@ sudo apt install autokey-gtk
 git clone https://github.com/petrstepanov/gnome-macos-remap
 chmod +x "./gnome-macos-remap/install.sh "./gnome-macos-remap/uninstall.sh"
 sh "./gnome-macos-remap/install.sh"
-
