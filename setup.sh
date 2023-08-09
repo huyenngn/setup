@@ -12,6 +12,10 @@ sudo apt install -y --no-install-recommends build-essential ninja-build wget cur
 # gnome extensions
 sudo apt install -y gnome-tweaks gnome-shell-extensions gnome-shell-extension-manager
 
+# reinstall nvidia drivers
+sudo apt install --reinstall nvidia-driver-470 
+sudo prime-select nvidia
+
 # for linux-typer
 sudo apt-get install -y libxdo-dev libgtk-3-dev
 
