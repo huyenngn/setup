@@ -8,9 +8,9 @@ sudo apt -y upgrade
 sudo apt install -y --no-install-recommends build-essential ninja-build wget curl git \
                                             file python-is-python3 pkg-config libgmp-dev \
                                             libmpfr-dev libmpc-dev libexpat-dev dbus-x11 \
-                                            libfdt-dev libglib2.0-dev libpixman-1-dev
+                                            libfdt-dev libglib2.0-dev libpixman-1-dev pipx
 # gnome extensions
-sudo apt install -y gnome-tweaks gnome-shell-extensions gnome-shell-extension-manager
+sudo apt install -y gnome-tweaks gnome-shell-extensions
 
 # reinstall nvidia drivers
 sudo apt install --reinstall nvidia-driver-470 
@@ -38,6 +38,11 @@ NODE_MAJOR=20
 echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_$NODE_MAJOR.x nodistro main" | sudo tee /etc/apt/sources.list.d/nodesource.list
 sudo apt-get update
 sudo apt-get install nodejs -y
+
+# install extensions
+pip3 install --upgrade gnome-extensions-cli
+pipx install gnome-extensions-cli --system-site-packages
+gext install Move_Clock@rmy.pobox.com gestureImprovements@gestures
 
 # switch to windows shortcut
 sudo mkdir /opt/switch_to_windows
