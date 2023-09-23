@@ -57,6 +57,6 @@ sudo grub-set-default 0
 sudo mkdir /boot/grub/themes/
 sudo tar -xvf legion.tar -C /boot/grub/themes/
 sudo sed 's/#GRUB_THEME.*//' /etc/default/grub
-sudo echo "GRUB_THEME=/boot/grub/themes/legion/theme.txt" >> /etc/default/grub
+echo "GRUB_THEME=/boot/grub/themes/legion/theme.txt" | sudo tee -a /etc/default/grub
 
 sudo update-grub
