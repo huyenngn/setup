@@ -49,6 +49,7 @@ sudo sed -i 's/GRUB_DEFAULT=.*/GRUB_DEFAULT=saved/' /etc/default/grub
 sudo grub-set-default 0
 
 # grub theme
+sudo mkdir /boot/grub/themes/
 sudo tar -xvf legion.tar -C /boot/grub/themes/
 sudo sed 's/#GRUB_THEME.*//' /etc/default/grub
 sudo echo "GRUB_THEME=/boot/grub/themes/legion/theme.txt" >> /etc/default/grub
