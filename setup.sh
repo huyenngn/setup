@@ -40,17 +40,17 @@ sudo apt-get update
 sudo apt-get install nodejs -y
 
 # switch to windows shortcut
-mkdir /opt/switch_to_windows
-mkdir /usr/share/icons/switch_to_windows
-mv windows.desktop /usr/share/applications
-mv windows.sh /opt/switch_to_windows
-mv icon.png /usr/share/icons/switch_to_windows
-sed -i 's/GRUB_DEFAULT=.*/GRUB_DEFAULT=saved/' /etc/default/grub
+sudo mkdir /opt/switch_to_windows
+sudo mkdir /usr/share/icons/switch_to_windows
+sudo mv windows.desktop /usr/share/applications
+sudo mv windows.sh /opt/switch_to_windows
+sudo mv icon.png /usr/share/icons/switch_to_windows
+sudo sed -i 's/GRUB_DEFAULT=.*/GRUB_DEFAULT=saved/' /etc/default/grub
 sudo grub-set-default 0
 
 # grub theme
-tar -xvf images.tar -C /boot/grub/themes/
-sed 's/#GRUB_THEME.*//' /etc/default/grub
-echo "GRUB_THEME=/boot/grub/themes/legion/theme.txt" >> /etc/default/grub
+sudo tar -xvf images.tar -C /boot/grub/themes/
+sudo sed 's/#GRUB_THEME.*//' /etc/default/grub
+sudo echo "GRUB_THEME=/boot/grub/themes/legion/theme.txt" >> /etc/default/grub
 
 sudo update-grub
