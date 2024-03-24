@@ -1,16 +1,25 @@
 #!/bin/bash
 
-# add repos
 sudo apt update
 sudo apt -y upgrade
 
-# install essentials
-sudo apt install -y --no-install-recommends build-essential ninja-build wget curl git \
-                                            file python-is-python3 pkg-config libgmp-dev \
-                                            libmpfr-dev libmpc-dev libexpat-dev dbus-x11 \
-                                            libfdt-dev libglib2.0-dev libpixman-1-dev pipx
+# Base
+sudo apt install -y --no-install-recommends build-essential ninja-build wget curl git vim
+
+# Python 
+sudo apt install -y python-is-python3 python3-pip python3-venv python3-dev
+
+# Nodejs
+sudo apt install -y nodejs npm
+
+# Java
+sudo apt install -y default-jdk
+
 # gnome extensions
-sudo apt install -y gnome-tweaks gnome-shell-extensions
+sudo apt install -y gnome-tweaks gnome-shell-extensions pipx
+pip3 install --upgrade gnome-extensions-cli
+pipx install gnome-extensions-cli --system-site-packages
+gext install Move_Clock@rmy.pobox.com gestureImprovements@gestures
 
 # reinstall nvidia drivers
 sudo apt install --reinstall nvidia-driver-470 
@@ -26,23 +35,8 @@ gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
 sudo snap remove --purge firefox
 
 # install apps
-sudo apt install -y indicator-multiload nautilus-admin rpi-imager
+sudo apt install -y indicator-multiload nautilus-admin
 sudo snap install vlc spotify
-
-# install nodejs
-sudo apt-get update
-sudo apt-get install -y ca-certificates curl gnupg
-sudo mkdir -p /etc/apt/keyrings
-curl -fsSL https://deb.nodesource.com/gpgkey/nodesource-repo.gpg.key | sudo gpg --dearmor -o /etc/apt/keyrings/nodesource.gpg
-NODE_MAJOR=20
-echo "deb [signed-by=/etc/apt/keyrings/nodesource.gpg] https://deb.nodesource.com/node_$NODE_MAJOR.x nodistro main" | sudo tee /etc/apt/sources.list.d/nodesource.list
-sudo apt-get update
-sudo apt-get install nodejs -y
-
-# install extensions
-pip3 install --upgrade gnome-extensions-cli
-pipx install gnome-extensions-cli --system-site-packages
-gext install Move_Clock@rmy.pobox.com gestureImprovements@gestures
 
 # switch to windows shortcut
 sudo mkdir /opt/switch_to_windows
